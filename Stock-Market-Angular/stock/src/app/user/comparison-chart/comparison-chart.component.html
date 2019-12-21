@@ -1,0 +1,139 @@
+<div class="container-fluid pb-4 pt-4" id="containercolor">
+
+  <h1 class="pt-2">COMPARISON CHARTS</h1>
+  <form [formGroup]="comparisonChart" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="card mt-6">
+          <div class="card-body">
+
+            <!--  <div class="form-group">
+              <label class="form-control-label" for="selectCS1">Select Company/Sector</label>
+              <span class="required">*</span>
+              <select id="selectCS1" class="form-control " formControlName="selectCS1"
+                [ngClass]="{ 'is-invalid': submitted && f.selectCS1.errors }" placeholder="Select Type">
+                <option value="1">Company</option>
+                <option value="2">Sector</option>
+               </select>
+              <div *ngIf="submitted && f.selectCS1.errors" class="invalid-feedback">
+                <div *ngIf="f.selectCS1.errors.required">Selection is required</div>
+              </div>
+            </div>-->
+
+
+            <div class="form-group">
+              <label class="form-control-label" for="selectSE1">Select Stock Exchange</label>
+              <span class="required">*</span>
+              <select id="selectSE1" class="form-control " formControlName="selectSE1"
+                [ngClass]="{ 'is-invalid': submitted && f.selectSE1.errors }" placeholder="Select Stock Exchange">
+                <option value="BSE">BSE</option>
+                <option value="NSE">NSE</option>
+                <option value="NASDAQ">NASDAQ</option>
+                <option value="NYSE">NYSE</option>
+              </select>
+              <div *ngIf="submitted && f.selectSE1.errors" class="invalid-feedback">
+                <div *ngIf="f.selectSE1.errors.required">Selection is required</div>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <label class="form-control-label" for="companyName1">Company name</label>
+              <span class="required">*</span>
+              <input type="text" class="form-control" id="companyName1" placeholder="Enter Company name."
+                formControlName="companyName1" [ngClass]="{ 'is-invalid': submitted && f.companyName1.errors }">
+              <div *ngIf="submitted && f.companyName1.errors" class="invalid-feedback">
+                <div *ngIf="f.companyName1.errors.required">Company name is required</div>
+                <div *ngIf="f.companyName1.errors.minlength">Company name should be at least 4 characters.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="card mt-6">
+          <div class="card-body">
+            <!--  <div class="form-group">
+              <label class="form-control-label" for="selectCS2">Select Company/Sector</label>
+              <span class="required">*</span>
+              <select id="selectCS2" class="form-control " formControlName="selectCS2"
+                [ngClass]="{ 'is-invalid': submitted && f.selectCS2.errors }" placeholder="Select Company/Sector">
+                <option value="1">Company</option>
+                <option value="2">Sector</option>
+               </select>
+              <div *ngIf="submitted && f.selectCS2.errors" class="invalid-feedback">
+                <div *ngIf="f.selectCS2.errors.required">Selection is required</div>
+              </div>
+            </div>-->
+
+
+            <div class="form-group">
+              <label class="form-control-label" for="selectSE2">Select Stock Exchange</label>
+              <span class="required">*</span>
+              <select id="selectSE2" class="form-control " formControlName="selectSE2"
+                [ngClass]="{ 'is-invalid': submitted && f.selectSE2.errors }" placeholder="Select Stock Exchange">
+                <option value="BSE">BSE</option>
+                <option value="NSE">NSE</option>
+                <option value="NASDAQ">NASDAQ</option>
+                <option value="NYSE">NYSE</option>
+              </select>
+              <div *ngIf="submitted && f.selectSE2.errors" class="invalid-feedback">
+                <div *ngIf="f.selectSE2.errors.required">Selection is required</div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+              <label class="form-control-label" for="companyName2">Company name</label>
+              <span class="required">*</span>
+              <input type="text" class="form-control" id="companyName2" placeholder="Enter Company name."
+                formControlName="companyName2" [ngClass]="{ 'is-invalid': submitted && f.companyName2.errors }">
+              <div *ngIf="submitted && f.companyName2.errors" class="invalid-feedback">
+                <div *ngIf="f.companyNam2.errors.required">Company name is required</div>
+                <div *ngIf="f.companyName2.errors.minlength">Company name should be at least 4 characters.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="form-group">
+      <label class="form-control-label" for="period">Select Period</label>
+      <span class="required">*</span>
+      <select id="period" class="form-control " formControlName="period"
+        [ngClass]="{ 'is-invalid': submitted && f.period.errors }" placeholder="Select Stock Exchange">
+        <option value="1">Last 7 days</option>
+        <option value="2">Last 30 days</option>
+        <option value="3">Last 90 days</option>
+      </select>
+      <div *ngIf="submitted && f.period.errors" class="invalid-feedback">
+        <div *ngIf="f.period.errors.required">Period is required</div>
+      </div>
+    </div>
+    <button type="submit" id="button" class="btn btn-primary">
+      Compare Now
+    </button>
+  </form>
+
+  <div class="chart-container">
+      <fusioncharts
+      width="700"
+      height="400"
+      type="msline"
+      [dataSource]="dataSource"
+    >
+    </fusioncharts>
+  </div>
+
+</div>

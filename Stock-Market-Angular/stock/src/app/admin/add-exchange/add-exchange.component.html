@@ -1,0 +1,51 @@
+
+
+
+       
+           
+    <div class="row">
+    <div class="card col-md-12 col-lg-4 offset-lg-4 mt-3" >
+                <div class="card-header text-center">
+                                <h1 id="heading" class="mb-0 heading">EXCHANGE</h1>
+                                <h1 id="black" class="mb-0 heading"> DETAILS</h1>
+                                </div>
+            <form [formGroup]="addExchangeForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                            <label for="offerName"><b> Exhange Name:</b></label><br>
+                            <input class="form-control" formControlName="stockExchange" type="text">
+                            <div *ngIf="addExchangeForm.get('stockExchange').touched && addExchangeForm.get('stockExchange').invalid" class="alert alert-danger">
+                                    Exchange Name is required
+                            </div>
+                    </div>
+            <br>
+                    <div class="form-group">
+                            <label for="productCode"><b>Brief description:</b></label><br>
+                            <input class="form-control" formControlName="brief" type="text">
+                            <div *ngIf="addExchangeForm.get('brief').touched && addExchangeForm.get('brief').invalid" class="alert alert-danger">
+                                        Brief description  can't be blank 
+                            </div>
+                    </div>
+            <br>
+                    <div class="form-group">
+                            <label for="discountedRate"> <b>Exchange Address:</b></label><br>
+                            <input class="form-control" formControlName="contactAddress" type="text">
+                            <div *ngIf="addExchangeForm.get('contactAddress').touched && addExchangeForm.get('contactAddress').invalid" class="alert alert-danger">
+                                        Exchange Address can't be blank
+                            </div>
+                    </div>
+            <br>
+                    <div class="form-group">
+                             <label for="discountedRate"> <b>Remarks:</b></label><br>
+                            <input class="form-control" formControlName="remarks" type="text">
+                            <div *ngIf="addExchangeForm.get('remarks').touched && addExchangeForm.get('remarks').invalid" class="alert alert-danger">
+                             Remark can't be blank
+                             </div>
+                             </div>
+                <br>
+            <button type="submit" class="btn btn-primary w-100" >Submit</button>
+            <div *ngIf="submitted === true"></div>
+            </form>
+    </div>
+    </div>
+  
+    

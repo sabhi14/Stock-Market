@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <i class="logo fas fa-chart-line"></i>&nbsp;&nbsp;
+  <a class="navbar-brand text-white" routerLink="/">Stock Market</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="material-icons">
+      menu
+    </i>
+  </button>
+  <div *ngIf="this.loginService.loggedIn" class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav pull-right" *ngIf="this.loginService.loggedInRole=='ROLE_ADMIN'">
+      <li class="nav-item active">
+        <a class="nav-link text-white" routerLink="/admin/importdata" id="navigation">Import Stock Data</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" routerLink="/admin/list-company" id="navigation">Manage Company</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link text-white" routerLink="/admin/manage-exchange" id="navigation">Manage Exchange</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" routerLink="/admin/ipo-display" id="navigation">IPO Details</a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav pull-right" *ngIf="this.loginService.loggedInRole!='ROLE_ADMIN'">
+      <li class="nav-item active">
+        <a class="nav-link text-white" routerLink="/user/view-companies" id="navigation">View Companies</a>
+      </li>
+
+      <li class="nav-item active">
+        <div class="nav-item">
+          <a class="nav-link" routerLink="/user/ipo-display" id="navigation">IPOs Planned</a>
+        </div>
+      </li>
+
+      <li class="nav-item active">
+        <div class="nav-item">
+          <a class="nav-link" routerLink="/user/compare-companies" id="navigation">Compare Companies</a>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav pull-right" *ngIf="this.loginService.loggedInRole=='ROLE_ADMIN'">
+      <div class="nav-item active dropdown">
+        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+
+              <img alt="Image placeholder" src="../../../assets/img/user.png">
+            </span> &nbsp;<span class="text-white">&nbsp;{{this.loginService.loggedInUserName}}</span>
+          </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+          <a class="dropdown-item" (click)="logout()"><i class="ni ni-user-run"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+    </ul>
+
+    <ul class="navbar-nav pull-right" *ngIf="this.loginService.loggedInRole!='ROLE_ADMIN'">
+      <div class="nav-item active dropdown">
+        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+
+              <img alt="Image placeholder" src="../../../assets/img/user.png">
+            </span> &nbsp;<span class="text-white">&nbsp;{{this.loginService.loggedInUserName}}</span>
+          </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+          <a class="dropdown-item " routerLink="/user/user-update"><i class="fas fa-user-edit"></i>Update Profile</a>
+          <a class="dropdown-item " routerLink="/user/change-password"><i class="fas fa-edit"></i>Change Password</a>
+          <a class="dropdown-item" (click)="logout()"><i class="ni ni-user-run"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+    </ul>
+  </div>
+</nav>

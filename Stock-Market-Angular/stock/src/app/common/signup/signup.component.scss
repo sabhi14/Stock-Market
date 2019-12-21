@@ -1,0 +1,50 @@
+#black {
+    color: black;
+    display: inline;
+    font-size: 150%;
+    font-weight: bold;
+    padding-top: 2rem;
+  }
+  
+  
+  #breadCrumb{
+  
+    color: white;
+  }
+  
+  #navBar{
+  background-color: #172b4d;
+  margin-top: 10px;
+  }
+  
+  #cardBodyColor{
+    background-color: #ced4da;
+    margin: 0;
+    padding: 80px;
+    width: 100%;
+  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .overflow{
+    width: 10rem;
+    white-space: nowrap;    
+    overflow: hidden;
+  }
+  
+  .ellipsis{
+    text-overflow: ellipsis;
+  }
+  
+  #signup_card{
+    min-width: 20rem;
+    width: 60%
+  }
+
+  .required
+{
+    color: red;
+}
+  

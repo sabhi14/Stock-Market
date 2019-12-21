@@ -1,0 +1,80 @@
+<div class="container-fluid pb-4" id="cardBodyColor">
+    <div class="container-fluid py-4">
+        <h1 id="heading" class="mb-0 heading pt-4">COMPANY</h1>
+        <h1 id="black" class="mb-0 heading pt-4"> LIST</h1>
+       
+      </div>
+  <div class="card" id="list-company_card">
+    <div class="card-header border-0">
+      <div class="row">
+        <div class="col-auto mr-auto">
+          <h3 class="mb-0">Company </h3>
+        </div>
+        <div class="col-auto"> <a routerLink="/admin/manage-company/add"
+            class="btn btn-sm btn-primary btn-round btn-icon text-right mr-0 ml-auto" data-toggle="tooltip">
+            <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+            <span class="btn-inner--text">Add Company</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <!-- Light table -->
+    <div class="table-responsive">
+      <table class="table table-flush align-items-center">
+        <thead class="thead-light">
+          <tr>
+            <th>Name</th>
+            <th>CEO</th>
+            <th>Listed In Stock Exchange</th>
+            <th>Sector ID</th>
+            <th>Turnover</th>
+            <th>Activated Status</th>
+            <th></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <tr *ngFor="let company of companies">
+             <td>
+              <span class="text-muted">{{company.companyName}}</span>
+            </td>
+            <td>
+              <span class="text-muted">{{company.ceoName}}</span>
+            </td>
+            <td>
+              <span *ngIf="company.listedInStockExchanges" class="text-muted">Yes</span>
+              <span *ngIf="!company.listedInStockExchanges" class="text-muted">No</span>
+
+            </td>
+            <td>
+              <span class="text-muted">{{company.sector.sectorName}}</span>
+            </td>
+            <td>
+              <span class="text-muted">{{company.turnover | currency:"INR"}}</span>
+            </td>
+              <td>
+              <label *ngIf="company.companyBlocked" class="custom-toggle custom-toggle-success">
+                <input type="checkbox" (change)="toggle($event, company)" >
+                <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes" id="isCompanyBlockedActiveToggle"></span>
+              </label>
+              <label *ngIf="!company.companyBlocked" class="custom-toggle custom-toggle-success">
+                <input type="checkbox" (change)="toggle($event, company)" checked>
+                <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes" id="isCompanyBlockedActiveToggle"></span>
+              </label>
+            </td>
+            <td>
+                <div class="col-auto"> <a routerLink="/admin/manage-company/{{company.companyId}}" 
+                  class="btn btn-sm btn-primary btn-round btn-icon text-right mr-0 ml-auto" data-toggle="tooltip">
+                  <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
+                  <span class="btn-inner--text">Edit</span>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+    
+      </table>
+    </div>
+  </div>
+</div>

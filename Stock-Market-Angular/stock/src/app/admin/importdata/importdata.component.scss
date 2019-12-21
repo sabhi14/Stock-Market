@@ -1,0 +1,50 @@
+#button {
+    background-color: #1939a0;
+    border: 0;
+    font-size: 100%;
+    width: 50%;
+  }
+  
+  #export_button {
+    border: 0;
+    font-size: 100%;
+    width: 40%;
+  }
+
+  #heading {
+    display: inline;
+    font-size: 150%;
+    font-weight: bold;
+    color: #525f7f;
+    padding-top: 2rem;
+  }
+
+  #cardBodyColor{
+      background-color: #ced4da;
+  }
+
+  #import_data_card{
+      width:40%;
+  }
+
+  #black {
+    color: #212529;
+    display: inline;
+    font-size: 150%;
+    font-weight: bold;
+    padding-top: 2rem;
+  }
+  
+ 
+  #navBar{
+  background-color: #172b4d;
+  margin-top: 10px;
+  }
+
+  #summarycard{
+    width:150%;
+}
+
+.card-body{
+  text-align: center;
+}

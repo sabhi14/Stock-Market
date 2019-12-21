@@ -1,0 +1,82 @@
+nav {
+    background-color: #3BD278;
+  }
+  
+  #button {
+    background-color: #525f7f;
+    border: 0;
+    font-size: 110%;
+  }
+  
+  #greenText {
+    color: #3BD278
+  }
+  
+  .jumbotron {}
+  
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 600px;
+    /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  #login_card {
+  
+    min-width: 250px;
+    max-width: 350px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+  }
+  
+  #login_card_div {
+    padding-top: 60px;
+  }
+  
+  #image_specs {
+    padding: 80px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+  }
+  
+  #black {
+    color: black;
+    display: inline;
+    font-size: 150%;
+    font-weight: bold;
+    padding-top: 2rem;
+  }
+  
+  #heading {
+    display: inline;
+    font-size: 150%;
+    font-weight: bold;
+    color: #525f7f;
+    padding-top: 2rem;
+  
+  }
+  
+  #main_container{
+      margin: 0;
+      padding: 0;
+      background-color: #ced4da;
+  }
+  
+  

@@ -1,0 +1,97 @@
+<div class="container-fluid" id="cardBodyColor">
+    <div class="container-fluid pt-4">
+
+  
+    </div>
+  <div class="card my-2 mx-auto" id="signup_card">
+    <div class="card-header text-center">
+      <h1 id="black" class="mb-0 heading"> SIGNUP</h1>
+    </div>
+
+    <div class="card-body">
+      <form class="needs-validation" id="signUpForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="form-control-label" for="emailId">Email</label><span class="required">*</span>
+              <input  type="email" maxlength="50"  class="form-control" id="emailId" placeholder="Enter Email" formControlName="emailId" required="required"
+                [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" >
+              <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                <div *ngIf="f.emailId.errors.required">Email ID is required</div>
+                <div *ngIf="f.emailId.errors.minlength">Email ID should be at least 4 characters</div>
+                <div *ngIf="f.emailId.errors.maxlength">Email ID should be at most 50 characters</div>
+                <div *ngIf="f.emailId.errors.pattern">Email ID should be of correct format</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="username">Username</label><span class="required">*</span>
+              <input type="text" maxlength="30" class="form-control" id="username" placeholder="Enter Username"
+                formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+                <div *ngIf="f.username.errors.minlength">Username should be at least 4 characters</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+       
+      
+       
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="contactNumber">Contact Number</label><span class="required">*</span>
+              <input type="text" minlength="10" maxlength="10" class="form-control" id="contactNumber" placeholder="Enter Contact Number"
+                formControlName="contactNumber" [ngClass]="{ 'is-invalid': submitted && f.contactNumber.errors }">
+              <div *ngIf="submitted && f.contactNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.contactNumber.errors.required">Contact Number is required</div>
+                <div *ngIf="f.contactNumber.errors.minlength">Contact Number should be at least 10 characters</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+       
+       
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="password">Password</label><span class="required">*</span>
+              <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password should be at least 8 characters</div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="confirmPassword">Confirm Password</label><span class="required">*</span>
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Re-Enter Password"
+                formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+              <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+       
+        <button type="submit" id="button" class="btn btn-primary">
+          Signup
+        </button>
+      </form>
+    </div>
+  </div>
+
+</div>

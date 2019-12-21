@@ -1,0 +1,52 @@
+<div class="container-fluid pb-4 px-2" id="cardBodyColor">
+  <div class="container-fluid py-4 mx-4">
+    <h1 id="heading" class="mb-0 heading pt-4">STOCK</h1>
+    <h1 id="black" class="mb-0 heading pt-4"> EXCHANGE</h1>
+
+  </div>
+  <div class="card mx-4" id="list-exchange_card">
+    <div class="card-header border-0">
+      <div class="row">
+        <div class="col-auto mr-auto"></div>
+        <div class="col-auto"> <a routerLink="/admin/add-exchange"
+            class="btn btn-sm btn-primary btn-round btn-icon text-right mr-0 ml-auto" data-toggle="tooltip">
+            <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+            <span class="btn-inner--text">Add Exchange</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <!-- Light table -->
+    <div class="table-responsive">
+      <table class="table table-flush align-items-center">
+        <thead class="thead-light">
+          <tr>
+            <th>Stock Exchange</th>
+            <th>Brief Description</th>
+            <th>Exchange Address </th>
+            <th>Remark</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let exchange of exchange">
+            <td>
+              <span class="text-muted">{{exchange.stockExchangeName}}</span>
+            </td>
+            <td>
+              <span class="text-muted">{{exchange.brief}}</span>
+            </td>
+            <td>
+              <span class="text-muted">{{exchange.contactAddress}}</span>
+            </td>
+            <td>
+              <span class="text-muted">{{exchange.remarks}}</span>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

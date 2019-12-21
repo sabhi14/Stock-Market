@@ -1,0 +1,43 @@
+<form  [formGroup]="form">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="companyName" class="form-control-label">Company StockCode</label>
+        <input type="text" class="form-control" formControlName="companyName" id="companyName" placeholder="Company Name">
+        <div class="alert alert-danger" *ngIf="companyName.touched && companyName.invalid">
+           Company StockCode is required
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="stockExchangeName" class="form-control-label">Stock Exchange Name</label>
+        <input type="text" class="form-control" formControlName="stockExchangeName" id="stockExchangeName" placeholder="Stock Exchange Name">
+        <div class="alert alert-danger" *ngIf="stockExchangeName.touched && stockExchangeName.invalid">
+            Stock exchange name is required
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="numberofShares" class="form-control-label">Number of Shares</label>
+            <input type="text" class="form-control" formControlName="numberofShares" id="numberOfShares" placeholder="Number of Shares">
+            <div class="alert alert-danger" *ngIf="numberofShares.touched && numberofShares.invalid">
+                Number of Shares is required
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="pricePerShare" class="form-control-label">Price Per Share</label>
+            <input type="text" class="form-control" formControlName="pricePerShare" id="pricePerShare" placeholder="Price per Share">
+            <div class="alert alert-danger" *ngIf="pricePerShare.touched && pricePerShare.invalid">
+                Price per share is required
+            </div>
+        </div>
+      </div>
+    <div class="form-group">
+        <label for="remark" class="form-control-label">Remarks</label>
+        <input type="text" class="form-control" formControlName="remark" id="remark" placeholder="Remarks">
+        <div class="alert alert-danger" *ngIf="remark.touched && remark.invalid">
+            Remarks are required
+        </div>
+      </div>
+    
+    <button type="submit" class="btn" (click)="onSubmit()" [disabled]="form.invalid">Save</button>
+  </form>

@@ -1,0 +1,51 @@
+
+
+<div class="container-fluid pb-4" id="cardBodyColor">
+        <div class="container-fluid py-4">
+            <h1 id="heading" class="mb-0 heading pt-4">IPO</h1>
+            <h1 id="black" class="mb-0 heading pt-4"> LIST</h1>
+           
+          </div>
+      <div class="card" id="list-company_card">
+        <div class="card-header border-0">
+          <div class="row">
+            <div class="col-auto mr-auto">
+              <h3 class="mb-0">IPOs </h3>
+            </div>
+            <div *ngIf="this.loginService.loggedInRole=='ROLE_ADMIN'" class="col-auto"> <a routerLink="/admin/add-ipo"
+                class="btn btn-sm btn-primary btn-round btn-icon text-right mr-0 ml-auto" data-toggle="tooltip">
+                <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                <span class="btn-inner--text">Add IPO</span>
+              </a>
+            </div>
+    
+          </div>
+        </div>
+        <!-- Light table -->
+        <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Company Id</th>
+                        <th scope="col">Company Name</th>
+                        <th scope="col">Stock Exchange</th>
+                        <th scope="col">Price (in Rs.)</th>
+                        <th scope="col">Total Shares</th>
+                        <th scope="col">Remarks</th>
+                    </tr> 
+                    </thead>
+                    <tbody class="list">
+                    <tr *ngFor="let ipo of ipos; index as i">
+                        <th scope="row">{{i + 1}}</th>
+                        <td>{{ipo.company.companyName}}</td>
+                        <td>{{ipo.stockExchange.stockExchangeName}}</td>
+                        <td>{{ipo.pricePerShare}}</td>
+                        <td>{{ipo.numberofShares}}</td>
+                        <td>{{ipo.remark}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+      </div>
+    </div>
+    

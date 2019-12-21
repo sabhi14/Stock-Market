@@ -1,0 +1,159 @@
+<div class="container-fluid" id="cardBodyCard">
+
+
+  <div class="card my-2 mx-auto" id="manage-company-card">
+    <div class="card-header text-center">
+      <h1 id="heading" class="mb-0 heading">COMPANY</h1>
+      <h1 id="black" class="mb-0 heading"> DETAILS</h1>
+    </div>
+    <div class="card-body">
+      <form class="needs-validation" id="manageCompanyForm" [formGroup]="manageCompanyForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="companyName">Company Name</label>
+              <input type="text" class="form-control form-control-alternative" id="companyName"
+                placeholder="Enter Company Name" formControlName="companyName"
+                [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }">
+              <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
+                <div *ngIf="f.companyName.errors.required">Company Name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="ceoName">CEO Name</label>
+              <input type="text" class="form-control form-control-alternative" id="ceoName" placeholder="Enter CEO Name"
+                formControlName="ceoName" [ngClass]="{ 'is-invalid': submitted && f.ceoName.errors }">
+              <div *ngIf="submitted && f.ceoName.errors" class="invalid-feedback">
+                <div *ngIf="f.ceoName.errors.required">CEO Name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="boardOfDirectors">Board of Directors Name</label>
+              <input type="text" class="form-control form-control-alternative" id="boardOfDirectors"
+                placeholder="Enter Board of Directors" formControlName="boardOfDirectors"
+                [ngClass]="{ 'is-invalid': submitted && f.boardOfDirectors.errors }">
+              <div *ngIf="submitted && f.boardOfDirectors.errors" class="invalid-feedback">
+                <div *ngIf="f.boardOfDirectors.errors.required">Board of Directors is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" class="form-control-label" for="status">Activate</label>
+              <div class="custom-control custom-radio mb-3">
+                <input name="status" class="custom-control-input" value="false" id="yes" type="radio"
+                  formControlName="status" checked="" [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+                <label class="form-control-label" class="custom-control-label" for="yes">Yes</label>
+              </div>
+              <div class="custom-control custom-radio mb-3">
+                <input name="status" class="custom-control-input" value="true" id="no" type="radio"
+                  formControlName="status" [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+                <label class="form-control-label" class="custom-control-label" for="no">No</label>
+              </div>
+              <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                <div *ngIf="f.status.errors.required">Status is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="form-control-label" for="companyInfo">Short Description </label>
+              <textarea id="companyInfo" class="form-control " id="companyInfo" rows="6" resize="none"
+                placeholder="Enter Short Description" formControlName="companyInfo"
+                [ngClass]="{ 'is-invalid': submitted && f.companyInfo.errors }"></textarea>
+              <div *ngIf="submitted && f.companyInfo.errors" class="invalid-feedback">
+                <div *ngIf="f.companyInfo.errors.required">Short Description is required</div>
+                <div *ngIf="f.companyInfo.errors.minlength"> Short Description should be at least 4
+                  characters</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="turnover">Turnover </label>
+              <input type="text" class="form-control form-control-alternative" id="turnover"
+                placeholder="Enter Turnover " formControlName="turnover"
+                [ngClass]="{ 'is-invalid': submitted && f.turnover.errors }">
+              <div *ngIf="submitted && f.turnover.errors" class="invalid-feedback">
+                <div *ngIf="f.turnover.errors.required">Turnover is required</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" for="companyStockCode">Stock Code </label>
+              <input type="text" class="form-control form-control-alternative" id="companyStockCode"
+                placeholder="Enter Stock Code " formControlName="companyStockCode"
+                [ngClass]="{ 'is-invalid': submitted && f.companyStockCode.errors }">
+              <div *ngIf="submitted && f.companyStockCode.errors" class="invalid-feedback">
+                <div *ngIf="f.companyStockCode.errors.required">Stock Code is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label" class="form-control-label" for="stockExchange">Listed In Stock
+                Exchange</label>
+              <div class="custom-control custom-radio mb-3">
+                <input name="stockExchange" class="custom-control-input" value="true" id="yesStock" type="radio"
+                  formControlName="stockExchange" checked=""
+                  [ngClass]="{ 'is-invalid': submitted && f.stockExchange.errors }">
+                <label class="form-control-label" class="custom-control-label" for="yesStock">Yes</label>
+              </div>
+              <div class="custom-control custom-radio mb-3">
+                <input name="stockExchange" class="custom-control-input" value="false" id="noStock" type="radio"
+                  formControlName="stockExchange" [ngClass]="{ 'is-invalid': submitted && f.stockExchange.errors }">
+                <label class="form-control-label" class="custom-control-label" for="noStock">No</label>
+              </div>
+              <div *ngIf="submitted && f.stockExchange.errors" class="invalid-feedback">
+                <div *ngIf="f.stockExchange.errors.required">Listed In Stock Exchange is required</div>
+              </div>
+            </div>
+          </div>
+
+      
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="form-control-label" for="sector">Sector</label>
+            <select id="sector" class="form-control form-control-alternative" data-toggle="select"
+              data-minimum-results-for-search="Infinity" formControlName="sector"
+              [ngClass]="{ 'is-invalid': submitted && f.sector.errors }">
+              <option value="1">IT</option>
+              <option value="2">Finance</option>
+              <option value="3">Automobiles</option>
+              <option value="4">Infra</option>
+            </select>
+            <div *ngIf="submitted && f.sector.errors" class="invalid-feedback">
+              <div *ngIf="f.sector.errors.required">Sector is required</div>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+    
+    <button type="submit" id="button" class="btn btn-primary">
+      Submit
+    </button>
+    </form>
+  </div>
+</div>
+
+</div>
